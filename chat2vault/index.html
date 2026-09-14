@@ -7,11 +7,21 @@
 <style>
   body{max-width:680px;margin:60px auto;padding:0 20px;font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif;color:#1a1a1a;background:#fff}
   h1{font-size:30px;margin-bottom:4px}
+  h2{font-size:20px;margin-top:40px}
   .muted{color:#6b7280}
   ul{padding-left:20px}
-  .cta{display:inline-block;margin-top:12px;padding:10px 18px;background:#7c3aed;color:#fff;border-radius:8px;text-decoration:none}
+  .cta{display:inline-block;margin-top:12px;padding:10px 18px;background:#7c3aed;color:#fff;border-radius:8px;text-decoration:none;font-weight:600}
+  .cta.secondary{background:#fff;color:#7c3aed;border:1px solid #7c3aed}
   a{color:#7c3aed}
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+  .plan{border:1px solid #e5e7eb;border-radius:12px;padding:18px 20px}
+  .plan h3{margin:0 0 4px;font-size:18px}
+  .price{font-size:28px;font-weight:700;margin:4px 0 10px}
+  .price small{font-size:14px;font-weight:400;color:#6b7280}
+  .plan ul{margin:0;padding-left:18px;font-size:15px}
+  .plan.pro{border-color:#7c3aed;background:#faf5ff}
   footer{margin-top:48px;font-size:14px;color:#6b7280}
+  @media (max-width:560px){.plans{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -24,21 +34,50 @@
     <li>One-click save to Obsidian (via <code>obsidian://</code> URI)</li>
     <li>YAML frontmatter: title, source URL, platform, date, tags</li>
     <li>Code blocks, tables, lists and links preserved</li>
+    <li>Preview and edit the Markdown before saving</li>
     <li>Copy as Markdown or download as <code>.md</code></li>
     <li>100% local — your chats never leave your browser</li>
   </ul>
 
   <a class="cta" href="#" id="install">Install from Chrome Web Store (coming soon)</a>
 
-  <h2 style="font-size:18px;margin-top:36px">Feedback &amp; support</h2>
+  <h2>Pricing</h2>
+  <div class="plans">
+    <div class="plan">
+      <h3>Free</h3>
+      <div class="price">$0</div>
+      <ul>
+        <li>Save to Obsidian</li>
+        <li>Copy Markdown / download .md</li>
+        <li>Frontmatter &amp; tags</li>
+        <li>Preview &amp; edit</li>
+        <li>claude.ai and chatgpt.com</li>
+      </ul>
+    </div>
+    <div class="plan pro">
+      <h3>Pro</h3>
+      <div class="price">$19 <small>one-time, per person</small></div>
+      <ul>
+        <li>Everything in Free</li>
+        <li>Custom note &amp; filename templates</li>
+        <li>Bulk export of your whole chat list</li>
+        <li>PDF / HTML export</li>
+        <li>Priority support</li>
+      </ul>
+      <a class="cta secondary" href="#" id="buy">Buy Pro (coming soon)</a>
+    </div>
+  </div>
+  <p class="muted" style="font-size:14px">Pro is a one-time purchase, delivered as a license key by email. 14-day money-back guarantee. Payments are handled by <a href="https://www.creem.io">Creem</a>, our merchant of record.</p>
+
+  <h2>Feedback &amp; support</h2>
   <ul>
     <li>Found a bug or want a feature? <a href="https://github.com/openthemydoor/openthemydoor.github.io/issues/new?title=%5Bchat2vault%5D%20">Open an issue on GitHub</a></li>
-    <li>Prefer email? <a href="mailto:openthemydoor@gmail.com?subject=chat2vault">openthemydoor@gmail.com</a></li>
+    <li>Email: <a href="mailto:openthemydoor@gmail.com?subject=chat2vault">openthemydoor@gmail.com</a> — we reply within 3 business days</li>
     <li>Enjoying it? A review on the Chrome Web Store helps a lot.</li>
   </ul>
 
   <footer>
-    <a href="privacy.html">Privacy policy</a> · <a href="https://github.com/openthemydoor/openthemydoor.github.io/issues">Support</a> · openthemydoor@gmail.com
+    <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a> · <a href="https://github.com/openthemydoor/openthemydoor.github.io/issues">Support</a> · openthemydoor@gmail.com
   </footer>
 </body>
 </html>
