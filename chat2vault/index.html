@@ -21,10 +21,23 @@
   .plan ul{margin:0;padding-left:18px;font-size:15px}
   .plan.pro{border-color:#7c3aed;background:#faf5ff}
   footer{margin-top:48px;font-size:14px;color:#6b7280}
+  .thanks{border:2px solid #7c3aed;background:#faf5ff;border-radius:12px;padding:18px 22px;margin-bottom:36px}
   @media (max-width:560px){.plans{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+  <div id="thanks" class="thanks" hidden>
+    <h2 style="margin-top:0">🎉 Thanks for buying chat2vault Pro!</h2>
+    <p>Your license key has been sent to the email you used at checkout (check spam if it's not there in a minute).</p>
+    <p><strong>To activate:</strong></p>
+    <ol>
+      <li>Click the chat2vault icon in Chrome, then the ⚙️ in the top-right corner</li>
+      <li>Scroll to <strong>Pro</strong>, paste your key, click <strong>Activate</strong></li>
+      <li>The <em>Note templates</em> section unlocks — done</li>
+    </ol>
+    <p class="muted">One key works on up to 3 browsers. Lost the email? Write to <a href="mailto:openthemydoor@gmail.com?subject=chat2vault%20license">openthemydoor@gmail.com</a> with the email you paid with.</p>
+  </div>
+
   <h1>📥 chat2vault</h1>
   <p class="muted">Stop losing your best AI conversations.</p>
 
@@ -78,5 +91,13 @@
   <footer>
     <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a> · <a href="https://github.com/openthemydoor/openthemydoor.github.io/issues">Support</a> · openthemydoor@gmail.com
   </footer>
+<script>
+  // Creem 付款后带 checkout_id 跳回来，或手动打开 #activate
+  const q = new URLSearchParams(location.search);
+  if (q.get('checkout_id') || location.hash === '#activate') {
+    document.getElementById('thanks').hidden = false;
+    window.scrollTo(0, 0);
+  }
+</script>
 </body>
 </html>
