@@ -17,17 +17,19 @@
 </head>
 <body>
 <h1>chat2vault Privacy Policy</h1>
-<p><em>Last updated: 2026-09-20</em></p>
+<p><em>Last updated: 2026-09-23</em></p>
 <p>chat2vault is a browser extension that saves AI chat conversations from claude.ai, chatgpt.com, chat.deepseek.com and gemini.google.com into your local Obsidian vault or as Markdown files.</p>
 <h2>What data the extension accesses</h2>
 <ul>
-<li>The text content of the conversation page you are currently viewing on claude.ai / chatgpt.com, <strong>only when you click a button in the extension popup</strong>.</li>
+<li>The text content of the conversation page you are currently viewing on a supported chat site, <strong>only when you click the extension icon</strong>.</li>
+<li><strong>Bulk export (only when you start it):</strong> your conversation list and the conversations you select, read from the chat site you are logged into (claude.ai, chatgpt.com or chat.deepseek.com) through that site's own web API, using your existing browser session. Your login is never sent anywhere else.</li>
 <li>Your extension settings (vault name, folder, filename template, tags, license key), stored via <code>chrome.storage.sync</code>.</li>
 </ul>
 <h2>What the extension does with it</h2>
 <ul>
 <li>Converts the conversation to Markdown <strong>entirely inside your browser</strong>.</li>
-<li>Writes the result to your clipboard, a local file download, or an <code>obsidian://</code> link that opens your local Obsidian app.</li>
+<li>Writes the result to your clipboard, a local file download, an <code>obsidian://</code> link that opens your local Obsidian app, or (bulk export) Markdown files in a folder on your computer that you choose. The extension only gets access to that folder after you pick it, and you can revoke it in the browser at any time.</li>
+<li>Remembers which conversations you already saved (conversation ID, file name, message count, time) in <code>chrome.storage.local</code> on your device, so re-saves can append new messages and bulk export can skip what is already saved.</li>
 </ul>
 <h2>What the extension does NOT do</h2>
 <ul>
